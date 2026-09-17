@@ -1,0 +1,60 @@
+{
+  "info": {
+    "name": "Library Management CRUD API",
+    "_postman_id": "library-management-crud",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080/api/books"
+    }
+  ],
+  "item": [
+    {
+      "name": "Create Book",
+      "request": {
+        "method": "POST",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Database Systems\",\n  \"author\": \"Korth\",\n  \"category\": \"DBMS\",\n  \"isbn\": \"ISBN004\",\n  \"quantity\": 5,\n  \"availableQuantity\": 5\n}"
+        },
+        "url": {"raw": "{{baseUrl}}", "host": ["{{baseUrl}}"]}
+      }
+    },
+    {
+      "name": "Read All Books",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "{{baseUrl}}", "host": ["{{baseUrl}}"]}
+      }
+    },
+    {
+      "name": "Read One Book",
+      "request": {
+        "method": "GET",
+        "url": {"raw": "{{baseUrl}}/1", "host": ["{{baseUrl}}"], "path": ["1"]}
+      }
+    },
+    {
+      "name": "Update Book",
+      "request": {
+        "method": "PUT",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Java Programming Updated\",\n  \"author\": \"Herbert Schildt\",\n  \"category\": \"Programming\",\n  \"isbn\": \"ISBN001\",\n  \"quantity\": 8,\n  \"availableQuantity\": 7\n}"
+        },
+        "url": {"raw": "{{baseUrl}}/1", "host": ["{{baseUrl}}"], "path": ["1"]}
+      }
+    },
+    {
+      "name": "Delete Book",
+      "request": {
+        "method": "DELETE",
+        "url": {"raw": "{{baseUrl}}/1", "host": ["{{baseUrl}}"], "path": ["1"]}
+      }
+    }
+  ]
+}
